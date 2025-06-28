@@ -1,0 +1,29 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  /* Fade-in on scroll */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Button glow */
+  .button-glow {
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .button-glow:hover {
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.8);
+  }
+  

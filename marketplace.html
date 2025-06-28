@@ -1,0 +1,85 @@
+<!-- marketplace.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JugaadStay - Marketplace</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white p-4">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <h1 class="flex items-center space-x-2 text-2xl font-bold">
+            <img src="images/logo.jpg" alt="JugaadStay" class="w-29 h-10"/>
+          </h1>
+      <nav class="mt-2 md:mt-0">
+        <a href="index.html" class="mr-4 hover:underline">Home</a>
+        <a href="listings.html" class="mr-4 hover:underline">Listings</a>
+        <a href="services.html" class="mr-4 hover:underline">Services</a>
+        <a href="marketplace.html" class="mr-4 hover:underline font-semibold underline">Marketplace</a>
+        <a href="login.html" class="hover:underline">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6">
+    <h2 class="text-3xl font-semibold mb-6 text-center">Student Marketplace</h2>
+
+    <div id="marketItems" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center text-sm p-4 mt-10">
+    &copy; 2025 JugaadStay. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const items = [
+      {
+        name: "Study Table",
+        price: "₹1200",
+        condition: "Good",
+        description: "Wooden table, used for 6 months."
+      },
+      {
+        name: "Laptop Stand",
+        price: "₹400",
+        condition: "Excellent",
+        description: "Adjustable height, metal finish."
+      },
+      {
+        name: "Used Books (CSE)",
+        price: "₹300",
+        condition: "Fair",
+        description: "DSA, DBMS, OS, CN – Semester 3 and 4 books."
+      },
+      {
+        name: "LED Desk Lamp",
+        price: "₹250",
+        condition: "Like New",
+        description: "Rechargeable lamp with brightness control."
+      }
+    ];
+
+    const container = document.getElementById("marketItems");
+
+    items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "bg-white p-4 rounded shadow hover:shadow-lg transition";
+      card.innerHTML = `
+        <h3 class="text-lg font-bold text-indigo-700 mb-1">${item.name}</h3>
+        <p class="text-sm text-gray-600 mb-1">Condition: ${item.condition}</p>
+        <p class="text-green-600 font-semibold mb-1">Price: ${item.price}</p>
+        <p class="text-sm text-gray-700">${item.description}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
